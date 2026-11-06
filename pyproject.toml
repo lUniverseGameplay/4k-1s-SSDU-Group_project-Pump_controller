@@ -1,0 +1,15 @@
+# pyproject.toml
+[project]
+name = "pump-analyzer"
+version = "0.1.0"
+description = "FastAPI сервис для анализа данных работы насоса"
+requires-python = ">=3.10"
+
+# Зависимости (вместо requirements.txt)
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.23.0",
+    "pydantic>=2.0.0",
+    "matplotlib>=3.7.0",
+    "numpy>=1.24.0"
+]
