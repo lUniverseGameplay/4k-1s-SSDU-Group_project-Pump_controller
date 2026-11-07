@@ -8,6 +8,21 @@ from app.core import AnalysisError, analyze_json
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 
+from __future__ import annotations
+
+import tempfile
+from unittest.mock import patch
+
+from fastapi.testclient import TestClient
+
+from app.main import app
+from app.visualization import create_pressure_rpm_graph
+from app.output_manager import (
+    get_analysis_file,
+    get_graph_file,
+    get_hypothesis_file,
+    save_analysis_result,
+)
 
 class AnalysisTests(unittest.TestCase):
     def analyze_file(self, name: str) -> dict[str, Any]:
@@ -155,6 +170,152 @@ class AnalysisTests(unittest.TestCase):
             "synthetic": True,
             "samples": samples,
         }
+
+class OutputArtifactTests(unittest.TestCase):
+    def sample_analysis(self) -> dict:
+        samples = [
+            {"t_s": 0.0, "pressure_mpa": 6.0, "rpm": 100.0, "valid": True},
+            {"t_s": 1.0, "pressure_mpa": 6.0, "rpm": 100.0, "valid": True},
+            {"t_s": 2.0, "pressure_mpa": None, "rpm": 100.0, "valid": True},
+            {"t_s": 3.0, "pressure_mpa": 7.0, "rpm": 110.0, "valid": True},
+            {"t_s": 5.0, "pressure_mpa": 7.0, "rpm": 110.0, "valid": True},
+        ]
+        intervals = [
+            {"start_s": 0.0, "end_s": 1.0, "duration_s": 1.0, "state": "working", "mode": "normal"},
+            {"start_s": 1.0, "end_s": 2.0, "duration_s": 1.0, "state": "invalid", "mode": None},
+            {"start_s": 2.0, "end_s": 3.0, "duration_s": 1.0, "state": "invalid", "mode": None},
+            {"start_s": 3.0, "end_s": 5.0, "duration_s": 2.0, "state": "gap", "mode": None},
+        ]
+        hypotheses = [
+            {
+                "id": 1,
+                "title": "Проверка",
+                "status": "detected",
+                "detected": True,
+                "message": "Тестовая гипотеза",
+                "details": {"value": 1},
+            }
+        ]
+        return {
+            "status": "ok",
+            "dataset_id": "unit_test",
+            "sample_count": len(samples),
+            "span_s": 5.0,
+            "working_s": 1.0,
+            "stopped_s": 0.0,
+            "gap_s": 2.0,
+            "invalid_s": 2.0,
+            "unknown_s": 4.0,
+            "modes_s": {"low": 0.0, "normal": 1.0, "high": 0.0},
+            "samples": samples,
+            "intervals": intervals,
+            "hypotheses": hypotheses,
+        }
+
+    def test_save_result_json_graph_and_hypothesis(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            result = save_analysis_result(self.sample_analysis(), root)
+
+            result_id = result["result_id"]
+            analysis_file = get_analysis_file(result_id, root)
+            graph_file = get_graph_file(result_id, root)
+            hypothesis_file = get_hypothesis_file(result_id, 1, root)
+
+            self.assertIsNotNone(analysis_file)
+            self.assertIsNotNone(graph_file)
+            self.assertIsNotNone(hypothesis_file)
+            self.assertTrue(analysis_file.is_file())
+            self.assertTrue(graph_file.is_file())
+            self.assertTrue(hypothesis_file.is_file())
+
+            with analysis_file.open(encoding="utf-8") as file:
+                saved_result = json.load(file)
+            with hypothesis_file.open(encoding="utf-8") as file:
+                saved_hypothesis = json.load(file)
+
+            self.assertEqual(saved_result["result_id"], result_id)
+            self.assertEqual(saved_result["artifacts"]["graph"]["url"], f"/api/results/{result_id}/graph")
+            self.assertEqual(saved_hypothesis["id"], 1)
+            self.assertEqual(saved_hypothesis["status"], "detected")
+            self.assertEqual(graph_file.read_bytes()[:8], b"\x89PNG\r\n\x1a\n")
+
+    def test_result_id_does_not_overwrite_previous_run(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            first = save_analysis_result(self.sample_analysis(), temporary_directory)
+            second = save_analysis_result(self.sample_analysis(), temporary_directory)
+            self.assertNotEqual(first["result_id"], second["result_id"])
+
+    def test_path_traversal_is_rejected(self) -> None:
+        self.assertIsNone(get_analysis_file("../outside"))
+        self.assertIsNone(get_hypothesis_file("valid_id", 11))
+
+    def test_empty_and_single_point_graphs_are_created(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            empty_graph = create_pressure_rpm_graph(
+                {"dataset_id": "empty", "samples": [], "intervals": []},
+                root / "empty.png",
+            )
+            single_graph = create_pressure_rpm_graph(
+                {
+                    "dataset_id": "single",
+                    "samples": [
+                        {"t_s": 4.0, "pressure_mpa": 6.0, "rpm": 100.0, "valid": True}
+                    ],
+                    "intervals": [],
+                },
+                root / "single.png",
+            )
+            self.assertTrue(empty_graph.is_file())
+            self.assertTrue(single_graph.is_file())
+            self.assertEqual(empty_graph.read_bytes()[:8], b"\x89PNG\r\n\x1a\n")
+            self.assertEqual(single_graph.read_bytes()[:8], b"\x89PNG\r\n\x1a\n")
+
+    def test_http_api_returns_artifact_urls_and_files(self) -> None:
+        payload = {
+            "schema_version": "1.0",
+            "dataset_id": "api_test",
+            "synthetic": True,
+            "samples": [
+                {"t_s": 0, "pressure_mpa": 6, "rpm": 100, "valid": True},
+                {"t_s": 1, "pressure_mpa": 6, "rpm": 100, "valid": True},
+            ],
+        }
+
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            with patch("app.output_manager.get_output_dir", return_value=Path(temporary_directory)):
+                client = TestClient(app)
+                response = client.post(
+                    "/api/analyze",
+                    files={"file": ("api_test.json", json.dumps(payload), "application/json")},
+                )
+                self.assertEqual(response.status_code, 200, response.text)
+                result = response.json()
+                result_id = result["result_id"]
+
+                saved_response = client.get(f"/api/results/{result_id}")
+                graph_response = client.get(f"/api/results/{result_id}/graph")
+                hypothesis_response = client.get(
+                    f"/api/results/{result_id}/hypotheses/1"
+                )
+
+                self.assertEqual(saved_response.status_code, 200)
+                self.assertEqual(graph_response.status_code, 200)
+                self.assertEqual(graph_response.headers["content-type"], "image/png")
+                self.assertEqual(hypothesis_response.status_code, 200)
+                self.assertIn("artifacts", result)
+
+    def test_invalid_json_does_not_create_output(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            with patch("app.output_manager.get_output_dir", return_value=Path(temporary_directory)):
+                client = TestClient(app)
+                response = client.post(
+                    "/api/analyze",
+                    files={"file": ("broken.json", "{bad json", "application/json")},
+                )
+                self.assertEqual(response.status_code, 422)
+                self.assertEqual(list(Path(temporary_directory).iterdir()), [])
 
 
 if __name__ == "__main__":
