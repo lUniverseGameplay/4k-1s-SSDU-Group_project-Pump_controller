@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { analyze, demoDataset, FormatError, validate } from "./analyzer"
-import type { Dataset, Interval } from "./analyzer"
+import { analyzeFile, ApiError, getApiUrl } from "./api"
+import { datasetFromResult, emptyViewAnalysis, toViewAnalysis } from "./analyzer"
+import type { BackendAnalysis, Dataset, Interval } from "./analyzer"
 import {
     clipIntervals,
     filterMeasurements,
@@ -324,8 +325,15 @@ function Chart({
 }
 
 export default function App() {
-    const [dataset, setDataset] = useState<Dataset>(() => demoDataset())
-    const [fileName, setFileName] = useState("05_long_record.json")
+    const [dataset, setDataset] = useState<Dataset>({
+        schema_version: "1.0",
+        dataset_id: "",
+        synthetic: false,
+        samples: [],
+    })
+    const [backendResult, setBackendResult] = useState<BackendAnalysis | null>(null)
+    const [isLoading, setIsLoading] = useState(false)
+    const [fileName, setFileName] = useState("Загрузка демонстрационной записи…")
     const [view, setView] = useState("overview")
     const [modal, setModal] = useState<"upload" | "help" | "settings" | null>(
         null,
@@ -345,6 +353,7 @@ export default function App() {
     const [range, setRange] = useState<[number, number]>([0, 100])
     const [source, setSource] = useState("long")
     const inputRef = useRef<HTMLInputElement>(null)
+    const initialDemoRequested = useRef(false)
     useEffect(() => {
         if (!modal) return
         const previousFocus = document.activeElement as HTMLElement | null
@@ -375,7 +384,10 @@ export default function App() {
             previousFocus?.focus()
         }
     }, [modal])
-    const a = useMemo(() => analyze(dataset), [dataset])
+    const a = useMemo(
+        () => backendResult ? toViewAnalysis(backendResult) : emptyViewAnalysis(),
+        [backendResult],
+    )
     const active = a.hypotheses.filter((h) => h.active).length
     const events = useMemo(() => problemEvents(a.intervals), [a.intervals])
     const firstTime = dataset.samples[0]?.t_s ?? 0
@@ -417,59 +429,39 @@ export default function App() {
         setToast(message)
         window.setTimeout(() => setToast(""), 3500)
     }
-    function loadDemo(kind: string) {
-        const d = demoDataset(kind)
-        setDataset(d)
-        setSource(kind)
-        setFileName(`${d.dataset_id}.json`)
-        resetView()
-        setError(null)
-        setModal(null)
-        notify("Демонстрационные данные загружены")
+    function reportApiError(cause: unknown, fallback: string) {
+        if (cause instanceof ApiError) {
+            setError({ message: cause.message, category: cause.status ? `${cause.category} · HTTP ${cause.status}` : cause.category })
+            return cause.message
+        }
+        const message = cause instanceof Error ? cause.message : fallback
+        setError({ message, category: "client_error" })
+        return message
     }
+
     async function loadFile(file?: File) {
         if (!file) return
+        setIsLoading(true)
+        setError(null)
         try {
-            let raw: unknown
-            try {
-                raw = JSON.parse(await file.text())
-            } catch {
-                throw new FormatError(
-                    "invalid_json",
-                    "Невалидный JSON. Проверьте синтаксис файла.",
-                )
-            }
-            const d = validate(raw)
-            setDataset(d)
+            const result = await analyzeFile(file)
+            setBackendResult(result)
+            setDataset(datasetFromResult(result))
             setSource("custom")
             setFileName(file.name)
-            setError(null)
             resetView()
             setModal(null)
-            notify("Файл проверен. Анализ завершён")
-        } catch (e) {
-            setError({
-                message: e instanceof Error ? e.message : "Не удалось прочитать файл.",
-                category: e instanceof FormatError ? e.category : "read_error",
-            })
-        }
+            notify("Файл проверен и проанализирован backend-сервером")
+        } catch (cause) {
+            reportApiError(cause, "Не удалось отправить файл на анализ.")
+        } finally { setIsLoading(false) }
     }
     function exportResult() {
-        const blob = new Blob(
-            [
-                JSON.stringify(
-                    {
-                        dataset_id: dataset.dataset_id,
-                        synthetic: dataset.synthetic,
-                        ...a.result,
-                        hypotheses: a.hypotheses,
-                    },
-                    null,
-                    2,
-                ),
-            ],
-            { type: "application/json" },
-        )
+        if (!backendResult) {
+            notify("Сначала дождитесь успешного анализа файла")
+            return
+        }
+        const blob = new Blob([JSON.stringify(backendResult, null, 2)], { type: "application/json" })
         const url = URL.createObjectURL(blob),
             link = document.createElement("a")
         link.href = url
@@ -529,10 +521,10 @@ export default function App() {
                         <span className="local-icon">
                             <Icon name="check" size={16} />
                         </span>
-                        <b>Ваши данные — у вас</b>
-                        <p>Все вычисления выполняются локально в браузере.</p>
+                        <b>Локальный backend</b>
+                        <p>Файлы отправляются в FastAPI для проверки и анализа.</p>
                         <span>
-                            Без отправки на сервер <Icon name="info" size={13} />
+                            Данные обрабатываются вашим сервером <Icon name="info" size={13} />
                         </span>
                     </div>
                     <button
@@ -565,7 +557,7 @@ export default function App() {
                     <div className="topbar-right">
                         <span className="local-status">
                             <i />
-                            Локальный режим
+                            {backendResult ? "API подключён" : isLoading ? "Выполняется анализ" : "Ожидание API"}
                         </span>
                         <span className="topbar-divider" />
                         <button
@@ -579,6 +571,12 @@ export default function App() {
                     </div>
                 </header>
                 <main>
+                    {error && !modal && (
+                        <div className="notice warning" role="alert">
+                            <Icon name="alert" size={16} />
+                            <span>{error.message} Откройте «Загрузить JSON», чтобы повторить запрос.</span>
+                        </div>
+                    )}
                     <section className="page-heading">
                         <div>
                             <div className="eyebrow">АНАЛИТИКА НАСОСНОГО ОБОРУДОВАНИЯ</div>
@@ -634,6 +632,7 @@ export default function App() {
                                 {fmt(dataset.samples.length)} записей <i>•</i> Схема{" "}
                                 {dataset.schema_version} <i>•</i> Длительность{" "}
                                 {duration(a.span)}
+                                {backendResult && <><i>•</i> ID: {backendResult.result_id}</>}
                             </span>
                         </div>
                         <div className="dataset-right">
@@ -643,18 +642,7 @@ export default function App() {
                                     Учебные данные
                                 </span>
                             )}
-                            <select
-                                aria-label="Выбрать демонстрационный файл"
-                                value={source}
-                                onChange={(e) => loadDemo(e.target.value)}
-                            >
-                                <option value="long">Демо: длинная запись</option>
-                                <option value="small">Демо: короткая запись</option>
-                                <option value="empty">Демо: пустой файл</option>
-                                {source === "custom" && (
-                                    <option value="custom">Ваш файл</option>
-                                )}
-                            </select>
+                            {backendResult && <a className="text-button" href={getApiUrl(backendResult.artifacts.graph.url)} target="_blank" rel="noreferrer">PNG график</a>}
                         </div>
                     </section>
                     {dataset.synthetic && (
@@ -1080,11 +1068,7 @@ export default function App() {
                                             </span>
                                             <span className={`badge ${h.active ? "amber" : "quiet"}`}>
                                                 <i />
-                                                {!a.span
-                                                    ? "Нет интервалов"
-                                                    : h.active
-                                                        ? "Актуальна"
-                                                        : "Не выявлена"}
+                                                {!a.span ? "Нет интервалов" : h.status === "insufficient_data" ? "Недостаточно данных" : h.active ? "Актуальна" : "Не выявлена"}
                                             </span>
                                             <span
                                                 className={
@@ -1101,8 +1085,8 @@ export default function App() {
                                                 <Icon name="info" size={16} />
                                                 <span>
                                                     {h.detail}{" "}
-                                                    {dataset.synthetic &&
-                                                        "Вывод относится только к учебному набору данных."}
+                                                    {dataset.synthetic && "Вывод относится только к учебному набору данных."}{" "}
+                                                    {backendResult && <a className="text-button" href={getApiUrl(`/api/results/${backendResult.result_id}/hypotheses/${h.id}`)} target="_blank" rel="noreferrer">Открыть JSON гипотезы</a>}
                                                 </span>
                                             </div>
                                         )}
@@ -1302,7 +1286,7 @@ export default function App() {
                     )}
                     <footer className="main-footer">
                         <span>
-                            <span className="footer-dot" /> Все расчёты выполнены локально
+                            <span className="footer-dot" /> Анализ выполнен сервером Pump Analyzer API
                         </span>
                         <span>
                             PumpInsight
@@ -1343,10 +1327,11 @@ export default function App() {
                                 <p>
                                     Загрузите JSON с измерениями насоса.
                                     <br />
-                                    Файл останется только на вашем устройстве.
+                                    Файл будет отправлен на локальный сервер FastAPI для анализа.
                                 </p>
                                 <button
                                     className={`dropzone ${dragging ? "dragging" : ""}`}
+                                    disabled={isLoading}
                                     onDragOver={(e) => {
                                         e.preventDefault()
                                         setDragging(true)
@@ -1360,7 +1345,7 @@ export default function App() {
                                     onClick={() => inputRef.current?.click()}
                                 >
                                     <Icon name="file" size={30} />
-                                    <b>Перетащите JSON-файл сюда</b>
+                                    <b>{isLoading ? "Отправка и анализ…" : "Перетащите JSON-файл сюда"}</b>
                                     <span>
                                         или <u>выберите на устройстве</u>
                                     </span>
@@ -1371,6 +1356,7 @@ export default function App() {
                                     type="file"
                                     accept=".json,application/json"
                                     hidden
+                                    disabled={isLoading}
                                     onChange={(e) => {
                                         void loadFile(e.target.files?.[0])
                                         e.target.value = ""
@@ -1390,27 +1376,6 @@ export default function App() {
                                         </div>
                                     </div>
                                 )}
-                                <div className="demo-divider">
-                                    <span>или попробуйте демоданные</span>
-                                </div>
-                                <div className="demo-options">
-                                    <button onClick={() => loadDemo("small")}>
-                                        <Icon name="file" />
-                                        <span>
-                                            <b>Короткая запись</b>
-                                            <small>13 точек · 12 секунд</small>
-                                        </span>
-                                        <Icon name="chevron" size={15} />
-                                    </button>
-                                    <button onClick={() => loadDemo("long")}>
-                                        <Icon name="chart" />
-                                        <span>
-                                            <b>Полный сценарий</b>
-                                            <small>Смена режимов, пропуск и ошибки</small>
-                                        </span>
-                                        <Icon name="chevron" size={15} />
-                                    </button>
-                                </div>
                             </>
                         ) : modal === "help" ? (
                             <>
