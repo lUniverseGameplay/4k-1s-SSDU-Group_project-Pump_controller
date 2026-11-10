@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import unittest
 from pathlib import Path
@@ -7,8 +9,6 @@ from app.core import AnalysisError, analyze_json
 
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
-
-from __future__ import annotations
 
 import tempfile
 from unittest.mock import patch
