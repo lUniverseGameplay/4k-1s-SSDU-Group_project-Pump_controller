@@ -2930,3 +2930,2607 @@ h2 {
         scroll-behavior: auto !important;
     }
 }
+
+
+@layer base {
+    body {
+        font-size: 14px;
+        color: #263b32;
+        line-height: 1.55;
+    }
+
+    input:focus-visible {
+        outline: 3px solid #8cbaa3;
+        outline-offset: 4px;
+    }
+}
+
+/* Боковая панель */
+
+.brand small {
+    font-size: 8px;
+    color: #607066;
+}
+
+.workspace b {
+    font-size: 13px;
+    color: #344d3c;
+}
+
+.workspace small {
+    font-size: 11px;
+    color: #657365;
+}
+
+.nav-label {
+    font-size: 10px;
+    color: #6c786d;
+}
+
+.nav-item {
+    font-size: 14px;
+    color: #596b5d;
+}
+
+.nav-item.active {
+    color: #254e32;
+}
+
+.nav-count {
+    font-size: 11px;
+    color: #7b5929;
+}
+
+.local-card b {
+    font-size: 12px;
+    color: #40583b;
+}
+
+.local-card p {
+    font-size: 11px;
+    color: #67755f;
+}
+
+.local-card>span:last-child {
+    font-size: 10px;
+    color: #536e47;
+}
+
+.sidebar-bottom>.nav-item {
+    font-size: 12px;
+}
+
+.sidebar-footer {
+    font-size: 12px;
+    color: #40573d;
+}
+
+.sidebar-footer small {
+    font-size: 10px;
+    color: #6c7964;
+}
+
+.beta {
+    font-size: 9px;
+    color: #627056;
+}
+
+/* Верхняя панель и заголовки */
+
+.breadcrumbs {
+    font-size: 12px;
+    color: #6f7c70;
+}
+
+.breadcrumbs b {
+    color: #435947;
+}
+
+.local-status {
+    font-size: 11px;
+    color: #5c735a;
+}
+
+.user-avatar {
+    font-size: 12px;
+    color: #415c3a;
+}
+
+.eyebrow {
+    font-size: 10px;
+    color: #65785b;
+}
+
+h1 {
+    font-size: 32px;
+    color: #263f2d;
+    line-height: 1.3;
+}
+
+.page-heading p {
+    font-size: 14px;
+    color: #607258;
+    line-height: 1.65;
+}
+
+.button {
+    font-size: 12px;
+}
+
+.button.secondary {
+    color: #445c3d;
+}
+
+h2,
+.panel-heading h2 {
+    font-size: 16px;
+    color: #304b34;
+}
+
+.panel-heading p {
+    font-size: 12px;
+    color: #64765a;
+    line-height: 1.65;
+}
+
+/* Информация о наборе данных */
+
+.dataset-title b {
+    font-size: 14px;
+    color: #344e37;
+}
+
+.dataset-title>span {
+    font-size: 11px;
+    color: #64745c;
+    line-height: 1.7;
+}
+
+.dataset-right select {
+    font-size: 11px;
+    color: #52694a;
+}
+
+.badge {
+    font-size: 10px;
+}
+
+.badge.success {
+    color: #38643a;
+    background: #e9f3e4;
+}
+
+.badge.synthetic {
+    color: #7d652e;
+    background: #f6f0df;
+}
+
+.badge.amber {
+    color: #806025;
+    background: #f8efd8;
+}
+
+.badge.quiet {
+    color: #4e693d;
+    background: #edf3e5;
+}
+
+.notice {
+    font-size: 11px;
+    color: #657455;
+    line-height: 1.75;
+}
+
+.notice.warning {
+    color: #94612d;
+}
+
+.notice svg {
+    color: #78885f;
+}
+
+/* Карточки показателей */
+
+.metric-top {
+    font-size: 12px;
+    color: #566b4c;
+}
+
+.metric-value {
+    font-size: 35px;
+    color: #29482f;
+}
+
+.metric-value>span {
+    font-size: 12px;
+    color: #66785a;
+}
+
+.metric-caption {
+    font-size: 11px;
+    color: #65775a;
+    line-height: 1.6;
+}
+
+.green .metric-caption {
+    color: #526e43;
+}
+
+/* Графики */
+
+.subtle-tag {
+    font-size: 10px;
+    color: #60744f;
+}
+
+.chart-toggles button {
+    font-size: 12px;
+    color: #526b47;
+}
+
+.chart-toggles .muted-toggle {
+    opacity: .65;
+}
+
+.chart-step {
+    font-size: 11px;
+    color: #6c7d5e;
+}
+
+.plot svg text {
+    font-size: 13px;
+    fill: #627754;
+}
+
+.chart-bottom {
+    font-size: 10px;
+    color: #667a57;
+}
+
+.timeline>span {
+    font-size: 10px;
+    color: #60764e;
+}
+
+.donut small {
+    font-size: 11px;
+    color: #667b57;
+}
+
+.donut b {
+    font-size: 30px;
+    color: #2d4b31;
+}
+
+.donut b span {
+    font-size: 12px;
+    color: #6a7e5b;
+}
+
+.mode-legend>div>span:nth-child(2) {
+    font-size: 12px;
+    color: #526a46;
+}
+
+.mode-legend>div>span:nth-child(2) small {
+    font-size: 10px;
+    color: #718162;
+}
+
+.mode-legend b {
+    font-size: 13px;
+    color: #395833;
+}
+
+.mode-legend b small,
+.mode-percent {
+    font-size: 10px;
+    color: #697d58;
+}
+
+.mode-percent {
+    width: 40px;
+}
+
+/* Гипотезы */
+
+.count-badge {
+    font-size: 10px;
+    color: #80672f;
+}
+
+.text-button {
+    font-size: 12px;
+    color: #4b703f;
+}
+
+.table-head {
+    font-size: 10px;
+    color: #677a56;
+}
+
+.hypothesis-title small {
+    font-size: 10px;
+    color: #718360;
+}
+
+.hypothesis-title b {
+    font-size: 13px;
+    color: #405d35;
+    line-height: 1.5;
+}
+
+.hypothesis-description {
+    font-size: 12px;
+    color: #657953;
+    line-height: 1.75;
+}
+
+.hypothesis-detail {
+    font-size: 12px;
+    color: #536e42;
+    line-height: 1.8;
+}
+
+.panel-foot {
+    font-size: 11px;
+    color: #6c7e5b;
+    line-height: 1.7;
+}
+
+.main-footer {
+    font-size: 10px;
+    color: #6b7e5b;
+}
+
+/* Сводка анализа */
+
+.summary-eyebrow {
+    font-size: 10px;
+    color: #587449;
+}
+
+.summary-copy h2 {
+    font-size: 17px;
+    color: #2f4d32;
+}
+
+.summary-copy p {
+    font-size: 12px;
+    color: #5d7351;
+    line-height: 1.8;
+}
+
+.quality-score>div:first-child>span {
+    font-size: 12px;
+    color: #5c724f;
+}
+
+.quality-score b {
+    font-size: 26px;
+    color: #315c37;
+}
+
+.quality-score small {
+    font-size: 10px;
+    color: #667d56;
+}
+
+/* Диапазон и события */
+
+.range-caption {
+    font-size: 12px;
+    color: #5b744d;
+    flex-wrap: wrap;
+}
+
+.range-caption b {
+    color: #405e35;
+}
+
+.range-caption button {
+    font-size: 11px;
+    color: #416b35;
+}
+
+.range-sliders label {
+    font-size: 11px;
+    color: #60794f;
+}
+
+.range-note {
+    font-size: 10px;
+    color: #627951;
+    line-height: 1.7;
+}
+
+.event-duration {
+    font-size: 12px;
+    color: #637650;
+}
+
+.event-copy b {
+    font-size: 13px;
+    color: #3c5b31;
+}
+
+.event-copy small {
+    font-size: 11px;
+    color: #667c55;
+}
+
+.event-time {
+    font-size: 12px;
+    color: #4e6b40;
+}
+
+.event-length {
+    font-size: 11px;
+    color: #697b55;
+}
+
+.event-action {
+    font-size: 12px;
+    color: #456d34;
+}
+
+.events-empty {
+    font-size: 13px;
+    color: #567344;
+}
+
+/* Таблица и поиск */
+
+.filter-tabs button {
+    font-size: 11px;
+    color: #647b52;
+}
+
+.filter-tabs button.selected {
+    color: #3f6533;
+}
+
+.search-field input {
+    font-size: 13px;
+    color: #3d6031;
+}
+
+.search-field input::placeholder {
+    color: #738464;
+}
+
+.data-filter,
+.results-count {
+    font-size: 12px;
+    color: #60794f;
+}
+
+.data-filter select,
+.page-size select {
+    font-size: 12px;
+    color: #4d6c3e;
+}
+
+.data-panel table {
+    font-size: 13px;
+}
+
+.data-panel th {
+    font-size: 11px;
+    color: #587347;
+}
+
+.data-panel td {
+    color: #49683a;
+}
+
+.pagination {
+    font-size: 12px;
+    color: #627a50;
+}
+
+.page-size {
+    font-size: 11px;
+    color: #60794c;
+}
+
+.table-empty {
+    color: #667c53;
+}
+
+.table-empty b {
+    color: #476b36;
+}
+
+.table-empty>span {
+    font-size: 12px;
+}
+
+/* Модальные окна */
+
+.modal h2 {
+    font-size: 26px;
+    color: #304f34;
+}
+
+.modal>p {
+    font-size: 13px;
+    color: #647b52;
+    line-height: 1.8;
+}
+
+.dropzone b {
+    font-size: 14px;
+    color: #4a6e38;
+}
+
+.dropzone span {
+    font-size: 12px;
+    color: #627d4f;
+}
+
+.dropzone small {
+    font-size: 11px;
+    color: #738761;
+}
+
+.demo-divider {
+    font-size: 11px;
+    color: #72845f;
+}
+
+.demo-options b {
+    font-size: 13px;
+    color: #496c37;
+}
+
+.demo-options small {
+    font-size: 11px;
+    color: #6b8158;
+}
+
+.upload-error {
+    font-size: 13px;
+    color: #955a35;
+}
+
+.upload-error code,
+.upload-error small {
+    font-size: 11px;
+}
+
+.upload-error small {
+    opacity: 1;
+}
+
+.help-steps>div>span {
+    font-size: 12px;
+    color: #55783e;
+}
+
+.help-steps h3 {
+    font-size: 14px;
+    color: #476c35;
+}
+
+.help-steps p {
+    font-size: 12px;
+    color: #677f52;
+}
+
+.modal pre {
+    font-size: 11px;
+    color: #536f40;
+}
+
+.settings-list>div {
+    font-size: 12px;
+    color: #677f54;
+}
+
+.settings-list b {
+    color: #496d36;
+}
+
+.toast {
+    font-size: 13px;
+}
+
+.chart-tooltip {
+    font-size: 11px;
+    color: #567344;
+}
+
+.chart-tooltip b {
+    color: #365b29;
+}
+
+.empty-chart {
+    font-size: 13px;
+    color: #667f51;
+}
+
+/* Адаптация: текст остаётся читаемым на небольших экранах */
+
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 29px;
+    }
+
+    .page-heading {
+        flex-wrap: wrap;
+    }
+
+    .page-heading p {
+        font-size: 13px;
+    }
+
+    .heading-actions {
+        padding-top: 0;
+    }
+
+    .metric-top {
+        font-size: 11px;
+    }
+
+    .metric-value {
+        font-size: 31px;
+    }
+
+    .metric-caption {
+        font-size: 10px;
+    }
+
+    .dataset-title b {
+        font-size: 12px;
+    }
+
+    .dataset-title>div {
+        flex-wrap: wrap;
+    }
+
+    .dataset-right select {
+        font-size: 11px;
+    }
+
+    .summary-copy h2 {
+        font-size: 15px;
+    }
+
+    .quality-score>div:first-child>span {
+        font-size: 11px;
+    }
+
+    .quality-score b {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 760px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+    }
+
+    .page-heading p {
+        font-size: 12px;
+    }
+
+    .heading-actions {
+        flex-wrap: wrap;
+        flex-shrink: 1;
+    }
+
+    .button,
+    .heading-actions .button {
+        font-size: 11px;
+    }
+
+    .breadcrumbs {
+        font-size: 11px;
+    }
+
+    .local-status {
+        font-size: 0;
+    }
+
+    h2,
+    .panel-heading h2 {
+        font-size: 14px;
+    }
+
+    .panel-heading p {
+        font-size: 11px;
+    }
+
+    .metric-top {
+        font-size: 10px;
+    }
+
+    .metric-value {
+        font-size: 29px;
+    }
+
+    .metric-value>span {
+        font-size: 11px;
+    }
+
+    .metric-caption {
+        font-size: 10px;
+    }
+
+    .dataset-title b {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .dataset-title>span,
+    .notice {
+        font-size: 10px;
+    }
+
+    .dataset-right select {
+        max-width: 65%;
+    }
+
+    .badge {
+        font-size: 10px;
+    }
+
+    .chart-meta,
+    .chart-bottom {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .chart-toggles {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .chart-toggles button {
+        font-size: 10px;
+    }
+
+    .chart-step,
+    .chart-bottom,
+    .timeline>span {
+        font-size: 9px;
+    }
+
+    .donut small {
+        font-size: 10px;
+    }
+
+    .donut b {
+        font-size: 26px;
+    }
+
+    .mode-legend>div>span:nth-child(2) {
+        font-size: 11px;
+    }
+
+    .mode-legend b {
+        font-size: 11px;
+    }
+
+    .mode-percent {
+        font-size: 10px;
+    }
+
+    .table-head,
+    .hypothesis-row {
+        grid-template-columns: minmax(0, 1fr) 100px 10px;
+    }
+
+    .hypothesis-title b {
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+
+    .hypothesis-title small {
+        font-size: 9px;
+    }
+
+    .hypothesis-row .badge {
+        font-size: 9px;
+        white-space: normal;
+    }
+
+    .hypothesis-detail {
+        font-size: 11px;
+        padding-left: 20px;
+    }
+
+    .table-head {
+        font-size: 9px;
+    }
+
+    .panel-foot,
+    .main-footer {
+        font-size: 10px;
+    }
+
+    .summary-copy h2 {
+        font-size: 14px;
+    }
+
+    .summary-copy p {
+        font-size: 11px;
+    }
+
+    .quality-score small {
+        font-size: 10px;
+    }
+
+    .range-caption,
+    .range-sliders label {
+        font-size: 10px;
+    }
+
+    .range-note {
+        font-size: 10px;
+    }
+
+    .event-copy b {
+        font-size: 12px;
+    }
+
+    .event-copy small {
+        font-size: 10px;
+    }
+
+    .event-time,
+    .event-length,
+    .event-action,
+    .event-duration {
+        font-size: 10px;
+    }
+
+    .data-filter,
+    .results-count,
+    .pagination {
+        font-size: 11px;
+    }
+
+    .pagination>div {
+        flex-wrap: wrap;
+    }
+
+    .modal h2 {
+        font-size: 23px;
+    }
+
+    .modal>p,
+    .help-steps p {
+        font-size: 12px;
+    }
+
+    .settings-list>div {
+        font-size: 11px;
+    }
+
+    .modal pre {
+        font-size: 11px;
+    }
+
+    .chart-tooltip {
+        font-size: 10px;
+    }
+
+    .toast {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 440px) {
+    h1 {
+        font-size: 27px;
+    }
+
+    .metric-card {
+        padding: 12px 10px;
+    }
+
+    .metric-top {
+        align-items: flex-start;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .metric-icon {
+        flex-shrink: 0;
+    }
+
+    .metric-value {
+        font-size: 28px;
+        flex-wrap: wrap;
+        gap: 3px 6px;
+    }
+
+    .metric-caption {
+        font-size: 9px;
+    }
+
+    .donut b {
+        font-size: 23px;
+    }
+
+    .donut small {
+        font-size: 9px;
+    }
+
+    .mode-legend>div>span:nth-child(2) {
+        font-size: 10px;
+    }
+
+    .mode-legend b,
+    .mode-percent {
+        font-size: 10px;
+    }
+
+    .table-head,
+    .hypothesis-row {
+        grid-template-columns: minmax(0, 1fr) 82px 9px;
+    }
+
+    .hypothesis-title {
+        min-width: 0;
+    }
+
+    .hypothesis-title> :last-child {
+        min-width: 0;
+    }
+
+    .hypothesis-title b {
+        font-size: 11px;
+    }
+
+    .hypothesis-title small {
+        font-size: 9px;
+    }
+
+    .hypothesis-row .badge {
+        font-size: 9px;
+    }
+
+    .chart-bottom {
+        font-size: 9px;
+    }
+
+    .modal h2 {
+        font-size: 22px;
+    }
+
+    .settings-list>div {
+        font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Ещё немного крупнее, насыщеннее и контрастнее */
+
+@layer base {
+    body {
+        font-size: 15px;
+        color: #1e3528;
+    }
+}
+
+/* Навигация */
+
+.nav-item {
+    font-size: 15px;
+    color: #405c48;
+}
+
+.nav-item.active {
+    background: #deeddf;
+    color: #205533;
+}
+
+.workspace b {
+    font-size: 14px;
+    color: #294832;
+}
+
+.workspace small,
+.sidebar-footer small {
+    font-size: 12px;
+    color: #53694f;
+}
+
+.nav-label {
+    font-size: 11px;
+    color: #52694f;
+}
+
+.sidebar-bottom>.nav-item,
+.sidebar-footer {
+    font-size: 13px;
+}
+
+.local-card b {
+    font-size: 13px;
+    color: #32502e;
+}
+
+.local-card p {
+    font-size: 12px;
+    color: #526b47;
+}
+
+.local-card>span:last-child {
+    font-size: 11px;
+    color: #446a37;
+}
+
+/* Заголовки */
+
+h1 {
+    font-size: 34px;
+    color: #1e3e29;
+}
+
+.eyebrow {
+    font-size: 11px;
+    color: #4b6b40;
+}
+
+.page-heading p {
+    font-size: 15px;
+    color: #486640;
+}
+
+h2,
+.panel-heading h2 {
+    font-size: 17px;
+    color: #23492d;
+}
+
+.panel-heading p {
+    font-size: 13px;
+    color: #526e45;
+}
+
+.breadcrumbs {
+    font-size: 13px;
+    color: #587052;
+}
+
+.breadcrumbs b {
+    color: #304f37;
+}
+
+.local-status {
+    font-size: 12px;
+    color: #43683e;
+}
+
+/* Кнопки и подписи */
+
+.button {
+    font-size: 13px;
+}
+
+.button.primary {
+    background: #286b40;
+}
+
+.button.primary:hover {
+    background: #1f5733;
+}
+
+.button.secondary {
+    color: #345b30;
+    border-color: #cadbc2;
+}
+
+.text-button {
+    font-size: 13px;
+    color: #32652c;
+}
+
+.badge {
+    font-size: 11px;
+}
+
+.badge.success {
+    color: #27602f;
+    background: #e0f0da;
+}
+
+.badge.quiet {
+    color: #3b602b;
+    background: #e6f0dc;
+}
+
+.badge.amber,
+.badge.synthetic {
+    color: #795615;
+    background: #f8edce;
+}
+
+.count-badge,
+.subtle-tag {
+    font-size: 11px;
+}
+
+.subtle-tag {
+    color: #4a693a;
+}
+
+/* Набор данных */
+
+.dataset-title b {
+    font-size: 15px;
+    color: #294c31;
+}
+
+.dataset-title>span {
+    font-size: 12px;
+    color: #506b44;
+}
+
+.dataset-right select {
+    font-size: 12px;
+    color: #3f6335;
+}
+
+.notice {
+    font-size: 12px;
+    color: #506c3f;
+}
+
+.notice.warning {
+    color: #8c561e;
+}
+
+/* Показатели */
+
+.metric-top {
+    font-size: 13px;
+    color: #405f36;
+}
+
+.metric-value {
+    font-size: 38px;
+    color: #214b2c;
+}
+
+.metric-value>span {
+    font-size: 13px;
+    color: #526f43;
+}
+
+.metric-caption {
+    font-size: 12px;
+    color: #526e43;
+}
+
+.green .metric-caption {
+    color: #3f6933;
+}
+
+.metric-card.green {
+    background: #eaf4e4;
+    border-color: #cbdcbe;
+}
+
+.green .metric-track>div {
+    background: #548a43;
+}
+
+/* Графики */
+
+.chart-toggles button {
+    font-size: 13px;
+    color: #3c6332;
+}
+
+.chart-step,
+.chart-bottom,
+.timeline>span {
+    font-size: 11px;
+    color: #536f43;
+}
+
+.plot svg text {
+    font-size: 14px;
+    fill: #4e6b40;
+}
+
+.donut small {
+    font-size: 12px;
+    color: #526e43;
+}
+
+.donut b {
+    font-size: 32px;
+    color: #214b2b;
+}
+
+.donut b span {
+    font-size: 13px;
+    color: #567347;
+}
+
+.mode-legend>div>span:nth-child(2) {
+    font-size: 13px;
+    color: #3e6031;
+}
+
+.mode-legend>div>span:nth-child(2) small,
+.mode-legend b small,
+.mode-percent {
+    font-size: 11px;
+    color: #597347;
+}
+
+.mode-legend b {
+    font-size: 14px;
+    color: #2d5726;
+}
+
+/* Гипотезы и пояснения */
+
+.table-head {
+    font-size: 11px;
+    color: #506d3d;
+}
+
+.hypothesis-title b {
+    font-size: 14px;
+    color: #31572a;
+}
+
+.hypothesis-title small {
+    font-size: 11px;
+    color: #587346;
+}
+
+.hypothesis-description,
+.hypothesis-detail {
+    font-size: 13px;
+    color: #4d6c3b;
+}
+
+.panel-foot {
+    font-size: 12px;
+    color: #557142;
+}
+
+.main-footer {
+    font-size: 11px;
+    color: #587348;
+}
+
+/* Сводка анализа */
+
+.summary-eyebrow {
+    font-size: 11px;
+    color: #426b35;
+}
+
+.summary-copy h2 {
+    font-size: 18px;
+    color: #254e2d;
+}
+
+.summary-copy p {
+    font-size: 13px;
+    color: #4a6b3d;
+}
+
+.quality-score>div:first-child>span {
+    font-size: 13px;
+    color: #4c6c3f;
+}
+
+.quality-score b {
+    font-size: 28px;
+    color: #256032;
+}
+
+.quality-score small {
+    font-size: 11px;
+    color: #537340;
+}
+
+.quality-track span {
+    background: #548c43;
+}
+
+/* Диапазон и события */
+
+.range-caption,
+.event-copy b {
+    font-size: 13px;
+    color: #365f2e;
+}
+
+.range-caption button,
+.range-sliders label,
+.range-note {
+    font-size: 11px;
+    color: #4a7138;
+}
+
+.event-copy small {
+    font-size: 12px;
+    color: #536f42;
+}
+
+.event-time,
+.event-duration,
+.event-action {
+    font-size: 13px;
+    color: #3c672f;
+}
+
+.event-length {
+    font-size: 12px;
+    color: #567043;
+}
+
+.events-empty {
+    font-size: 14px;
+    color: #426c33;
+}
+
+/* Таблица */
+
+.search-field input {
+    font-size: 14px;
+    color: #315b28;
+}
+
+.search-field input::placeholder {
+    color: #657c55;
+}
+
+.filter-tabs button {
+    font-size: 12px;
+    color: #4c6b3c;
+}
+
+.filter-tabs button.selected {
+    color: #2e6025;
+}
+
+.data-filter,
+.results-count,
+.pagination {
+    font-size: 13px;
+    color: #4d6e3c;
+}
+
+.data-filter select,
+.page-size select {
+    font-size: 13px;
+    color: #3b642e;
+}
+
+.page-size {
+    font-size: 12px;
+    color: #4d703a;
+}
+
+.data-panel table {
+    font-size: 14px;
+}
+
+.data-panel th {
+    font-size: 12px;
+    color: #406632;
+}
+
+.data-panel td {
+    color: #355f29;
+}
+
+.table-empty>span {
+    font-size: 13px;
+    color: #567343;
+}
+
+/* Модальные окна */
+
+.modal h2 {
+    font-size: 28px;
+    color: #244c2c;
+}
+
+.modal>p,
+.help-steps p {
+    font-size: 14px;
+    color: #526f41;
+}
+
+.dropzone b,
+.help-steps h3 {
+    font-size: 15px;
+    color: #38642b;
+}
+
+.dropzone span,
+.demo-options b {
+    font-size: 14px;
+    color: #426d31;
+}
+
+.dropzone small,
+.demo-options small,
+.demo-divider {
+    font-size: 12px;
+    color: #5b7748;
+}
+
+.settings-list>div {
+    font-size: 13px;
+    color: #537440;
+}
+
+.settings-list b {
+    color: #356329;
+}
+
+.modal pre {
+    font-size: 12px;
+    color: #426633;
+}
+
+.toast {
+    font-size: 14px;
+}
+
+.chart-tooltip {
+    font-size: 12px;
+    color: #426c33;
+}
+
+.chart-tooltip b {
+    color: #285720;
+}
+
+/* Небольшие экраны */
+
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 31px;
+    }
+
+    .page-heading p {
+        font-size: 14px;
+    }
+
+    .metric-top {
+        font-size: 12px;
+    }
+
+    .metric-value {
+        font-size: 34px;
+    }
+
+    .metric-caption {
+        font-size: 11px;
+    }
+
+    .dataset-title b {
+        font-size: 14px;
+    }
+
+    .summary-copy h2 {
+        font-size: 16px;
+    }
+
+    .quality-score>div:first-child>span {
+        font-size: 12px;
+    }
+
+    .quality-score b {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 760px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+    }
+
+    .page-heading p {
+        font-size: 13px;
+    }
+
+    .button,
+    .heading-actions .button {
+        font-size: 12px;
+    }
+
+    .breadcrumbs {
+        font-size: 12px;
+    }
+
+    .local-status {
+        font-size: 0;
+    }
+
+    h2,
+    .panel-heading h2 {
+        font-size: 15px;
+    }
+
+    .panel-heading p {
+        font-size: 12px;
+    }
+
+    .metric-top {
+        font-size: 11px;
+    }
+
+    .metric-value {
+        font-size: 32px;
+    }
+
+    .metric-value>span,
+    .metric-caption {
+        font-size: 11px;
+    }
+
+    .dataset-title b {
+        font-size: 13px;
+    }
+
+    .dataset-title>span,
+    .notice,
+    .badge {
+        font-size: 11px;
+    }
+
+    .dataset-right select {
+        font-size: 12px;
+    }
+
+    .chart-toggles button {
+        font-size: 11px;
+    }
+
+    .chart-step,
+    .chart-bottom,
+    .timeline>span {
+        font-size: 10px;
+    }
+
+    .donut small {
+        font-size: 11px;
+    }
+
+    .donut b {
+        font-size: 28px;
+    }
+
+    .mode-legend>div>span:nth-child(2),
+    .mode-legend b {
+        font-size: 12px;
+    }
+
+    .mode-percent {
+        font-size: 11px;
+    }
+
+    .hypothesis-title b {
+        font-size: 12px;
+    }
+
+    .hypothesis-title small,
+    .table-head,
+    .hypothesis-row .badge {
+        font-size: 10px;
+    }
+
+    .hypothesis-detail,
+    .panel-foot {
+        font-size: 12px;
+    }
+
+    .main-footer {
+        font-size: 11px;
+    }
+
+    .summary-copy h2 {
+        font-size: 15px;
+    }
+
+    .summary-copy p {
+        font-size: 12px;
+    }
+
+    .quality-score small {
+        font-size: 11px;
+    }
+
+    .range-caption,
+    .range-sliders label,
+    .range-note {
+        font-size: 11px;
+    }
+
+    .event-copy b {
+        font-size: 13px;
+    }
+
+    .event-copy small,
+    .event-time,
+    .event-length,
+    .event-action,
+    .event-duration {
+        font-size: 11px;
+    }
+
+    .data-filter,
+    .results-count,
+    .pagination {
+        font-size: 12px;
+    }
+
+    .modal h2 {
+        font-size: 25px;
+    }
+
+    .modal>p,
+    .help-steps p {
+        font-size: 13px;
+    }
+
+    .settings-list>div,
+    .modal pre {
+        font-size: 12px;
+    }
+
+    .chart-tooltip {
+        font-size: 11px;
+    }
+
+    .toast {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 440px) {
+    h1 {
+        font-size: 29px;
+    }
+
+    .metric-top {
+        font-size: 11px;
+    }
+
+    .metric-value {
+        font-size: 30px;
+    }
+
+    .metric-caption {
+        font-size: 10px;
+    }
+
+    .donut b {
+        font-size: 25px;
+    }
+
+    .donut small {
+        font-size: 10px;
+    }
+
+    .mode-legend>div>span:nth-child(2),
+    .mode-legend b,
+    .mode-percent {
+        font-size: 11px;
+    }
+
+    .hypothesis-title b {
+        font-size: 12px;
+    }
+
+    .hypothesis-title small,
+    .hypothesis-row .badge {
+        font-size: 10px;
+    }
+
+    .chart-bottom {
+        font-size: 10px;
+    }
+
+    .modal h2 {
+        font-size: 24px;
+    }
+
+    .settings-list>div {
+        font-size: 12px;
+    }
+}
+
+/* Максимальная яркость, сочные акценты и высокий контраст */
+
+@layer base {
+    body {
+        color: #12281a;
+        background: #f2f6f3;
+    }
+
+    ::selection {
+        background: #bbf7d0;
+        color: #064e3b;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    select:focus-visible,
+    input:focus-visible {
+        outline: 3px solid #34d399;
+        outline-offset: 3px;
+    }
+}
+
+/* Фирменный стиль и левая панель */
+
+.brand {
+    color: #0e3820;
+}
+
+.brand-symbol {
+    background: #15803d;
+    color: #f0fdf4;
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.28);
+}
+
+.brand small {
+    color: #4b6352;
+}
+
+.workspace {
+    background: #ffffff;
+    border-color: #d1e2d4;
+    box-shadow: 0 1px 3px rgba(16, 68, 35, 0.05);
+}
+
+.workspace-avatar {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.workspace b {
+    color: #143820;
+}
+
+.workspace small {
+    color: #4b6852;
+}
+
+.workspace-dot {
+    background: #16a34a;
+    box-shadow: 0 0 0 3px #bbf7d0;
+}
+
+.nav-label {
+    color: #4a6850;
+    font-weight: 650;
+}
+
+.nav-item {
+    color: #3b5a43;
+}
+
+.nav-item:hover {
+    background: #eaf6ec;
+    color: #0f5128;
+}
+
+.nav-item.active {
+    background: #dcfce7;
+    color: #0e5a2b;
+    font-weight: 600;
+}
+
+.nav-count {
+    background: #fef3c7;
+    color: #92400e;
+    font-weight: 600;
+}
+
+.local-card {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.local-icon {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.local-card b {
+    color: #165328;
+}
+
+.local-card p {
+    color: #3f664a;
+}
+
+.local-card>span:last-child {
+    color: #166534;
+    font-weight: 600;
+}
+
+.version-mark {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.beta {
+    color: #15803d;
+    background: #f0fdf4;
+    border-color: #86efac;
+}
+
+/* Верхняя панель */
+
+.breadcrumbs {
+    color: #4b6651;
+}
+
+.breadcrumbs b {
+    color: #143b22;
+}
+
+.local-status {
+    color: #166534;
+    font-weight: 550;
+}
+
+.local-status i {
+    background: #16a34a;
+    box-shadow: 0 0 0 3px #bbf7d0;
+}
+
+.icon-button {
+    color: #3c5e44;
+}
+
+.icon-button:hover {
+    background: #eaf5ec;
+    color: #124e27;
+}
+
+.user-avatar {
+    background: #dcfce7;
+    color: #166534;
+    border-color: #bbf7d0;
+    font-weight: 600;
+}
+
+/* Заголовки страницы */
+
+.eyebrow {
+    color: #15803d;
+    font-weight: 700;
+}
+
+h1 {
+    color: #0d2f19;
+}
+
+.page-heading p {
+    color: #385941;
+}
+
+/* Кнопки */
+
+.button.primary {
+    background: #15803d;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(21, 128, 61, 0.28);
+}
+
+.button.primary:hover {
+    background: #166534;
+}
+
+.button.secondary {
+    background: #ffffff;
+    color: #1b4d29;
+    border-color: #bbf7d0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.button.secondary:hover {
+    background: #f0fdf4;
+    border-color: #86efac;
+}
+
+.text-button {
+    color: #15803d;
+    font-weight: 600;
+}
+
+.text-button:hover {
+    color: #0f5128;
+}
+
+/* Набор данных */
+
+.dataset-bar {
+    border-color: #cfe2d3;
+    box-shadow: 0 2px 6px rgba(18, 56, 30, 0.04);
+}
+
+.file-icon {
+    background: #dcfce7;
+    border-color: #bbf7d0;
+    color: #15803d;
+}
+
+.dataset-title b {
+    color: #0f381e;
+}
+
+.dataset-title>span {
+    color: #41624a;
+}
+
+.dataset-title>span i {
+    color: #94b59c;
+}
+
+.dataset-right select {
+    color: #165e31;
+    border-left-color: #d1e3d4;
+    font-weight: 500;
+}
+
+/* Бейджи */
+
+.badge.success {
+    color: #14532d;
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+    font-weight: 600;
+}
+
+.badge.synthetic {
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    font-weight: 600;
+}
+
+.badge.synthetic>span {
+    background: #d97706;
+}
+
+.badge.amber {
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    font-weight: 600;
+}
+
+.badge.quiet {
+    color: #166534;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    font-weight: 600;
+}
+
+.count-badge {
+    color: #92400e;
+    background: #fef3c7;
+    font-weight: 600;
+}
+
+.subtle-tag {
+    color: #166534;
+    border-color: #bbf7d0;
+    background: #f0fdf4;
+}
+
+/* Предупреждения и подсказки */
+
+.notice {
+    color: #3b5e44;
+}
+
+.notice svg {
+    color: #16a34a;
+}
+
+.notice.warning {
+    color: #b45309;
+    font-weight: 550;
+}
+
+/* Карточки показателей */
+
+.metric-card {
+    border-color: #cfe0d2;
+    box-shadow: 0 2px 6px rgba(19, 56, 31, 0.04);
+}
+
+.metric-top {
+    color: #36573e;
+    font-weight: 550;
+}
+
+.metric-value {
+    color: #0d361c;
+}
+
+.metric-value>span {
+    color: #4c6f54;
+}
+
+.metric-caption {
+    color: #3f6548;
+}
+
+.metric-caption i {
+    background: #16a34a;
+}
+
+.metric-card.green {
+    background: #f0fdf4;
+    border-color: #86efac;
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.09);
+}
+
+.green .metric-icon {
+    color: #15803d;
+    background: #dcfce7;
+    border-color: #86efac;
+}
+
+.green .metric-track>div {
+    background: #16a34a;
+}
+
+.green .metric-caption {
+    color: #166534;
+    font-weight: 550;
+}
+
+.orange .metric-icon {
+    color: #b45309;
+    background: #fef3c7;
+    border-color: #fde68a;
+}
+
+.orange .metric-track>div {
+    background: #f59e0b;
+}
+
+/* Заголовки панелей */
+
+.panel {
+    border-color: #cfe0d2;
+    box-shadow: 0 2px 7px rgba(18, 54, 30, 0.04);
+}
+
+h2,
+.panel-heading h2 {
+    color: #0e381f;
+}
+
+.panel-heading p {
+    color: #3d6046;
+}
+
+/* Графики и легенды */
+
+.chart-toggles button {
+    color: #1f5733;
+    font-weight: 550;
+}
+
+.line-key.green {
+    background: #16a34a;
+}
+
+.line-key.purple {
+    background: #8b5cf6;
+}
+
+.chart-step,
+.chart-bottom {
+    color: #42654b;
+    font-weight: 500;
+}
+
+.plot svg text {
+    fill: #2f5439;
+    font-weight: 500;
+}
+
+.zone-key.gap {
+    background: #cbd5e1;
+}
+
+.zone-key.invalid {
+    background: #fed7aa;
+}
+
+.timeline>span {
+    color: #1b4e2b;
+    font-weight: 600;
+}
+
+.timeline-track {
+    background: #e2ede5;
+}
+
+.donut b {
+    color: #0c361b;
+}
+
+.donut small {
+    color: #3e6247;
+    font-weight: 600;
+}
+
+.donut b span {
+    color: #476a50;
+}
+
+.mode-legend>div {
+    border-bottom-color: #e5efe7;
+}
+
+.mode-legend>div>span:nth-child(2) {
+    color: #1d4d2b;
+    font-weight: 500;
+}
+
+.mode-legend>div>span:nth-child(2) small {
+    color: #55785f;
+}
+
+.mode-legend b {
+    color: #124b25;
+}
+
+.mode-percent {
+    color: #476d51;
+    font-weight: 550;
+}
+
+/* Таблица гипотез */
+
+.table-head {
+    background: #f4faf5;
+    border-block-color: #d7e7dc;
+    color: #275734;
+    font-weight: 650;
+}
+
+.hypothesis-row {
+    border-bottom-color: #e5efe7;
+}
+
+.hypothesis-row:hover {
+    background: #f5fbf7;
+}
+
+.hypothesis-title b {
+    color: #103b20;
+}
+
+.hypothesis-title small {
+    color: #486e52;
+    font-weight: 600;
+}
+
+.hypothesis-icon {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.hypothesis-icon.is-active {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.hypothesis-description {
+    color: #37593f;
+}
+
+.hypothesis-detail {
+    background: #f0fdf4;
+    border-bottom-color: #bbf7d0;
+    color: #14532d;
+}
+
+.panel-foot {
+    color: #456b4f;
+    border-top: 1px solid #e7efe9;
+}
+
+.main-footer {
+    color: #486b51;
+}
+
+.footer-dot {
+    background: #16a34a;
+    box-shadow: 0 0 0 2px #bbf7d0;
+}
+
+/* Сводка анализа */
+
+.analysis-summary {
+    border-color: #86efac;
+    background: linear-gradient(110deg, #ecfdf5, #f7fdf9 75%);
+    box-shadow: 0 3px 12px rgba(16, 185, 129, 0.08);
+}
+
+.summary-symbol {
+    background: #dcfce7;
+    border-color: #86efac;
+    color: #15803d;
+}
+
+.summary-symbol.attention {
+    background: #fef3c7;
+    border-color: #fde68a;
+    color: #b45309;
+}
+
+.summary-eyebrow {
+    color: #15803d;
+    font-weight: 750;
+}
+
+.summary-copy h2 {
+    color: #0e3b1f;
+}
+
+.summary-copy p {
+    color: #33593d;
+}
+
+.quality-score {
+    border-left-color: #bbf7d0;
+}
+
+.quality-score>div:first-child>span {
+    color: #2e593a;
+    font-weight: 550;
+}
+
+.quality-score b {
+    color: #15803d;
+}
+
+.quality-track {
+    background: #dcfce7;
+}
+
+.quality-track span {
+    background: #16a34a;
+}
+
+.quality-score small {
+    color: #3d6849;
+    font-weight: 500;
+}
+
+.summary-link {
+    color: #15803d;
+    border-color: #86efac;
+    background: #ffffff;
+}
+
+.summary-link:hover {
+    background: #dcfce7;
+    color: #0f5128;
+}
+
+/* Ползунки диапазона и события */
+
+.range-controls {
+    background: #f7fbf8;
+    border-top-color: #dcece0;
+}
+
+.range-caption {
+    color: #275635;
+    font-weight: 550;
+}
+
+.range-caption b {
+    color: #0e3d1f;
+}
+
+.range-caption button {
+    color: #15803d;
+    font-weight: 600;
+}
+
+.range-sliders label {
+    color: #2b5738;
+    font-weight: 500;
+}
+
+.range-sliders input {
+    accent-color: #16a34a;
+}
+
+.range-note {
+    color: #3a6245;
+}
+
+.event-row {
+    border-top-color: #e5efe7;
+}
+
+.event-row:hover {
+    background: #f5fbf7;
+}
+
+.event-icon {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.event-icon.invalid {
+    background: #fed7aa;
+    color: #c2410c;
+}
+
+.event-copy b {
+    color: #103c20;
+}
+
+.event-copy small {
+    color: #40674a;
+}
+
+.event-time {
+    color: #166534;
+    font-weight: 600;
+}
+
+.event-length,
+.event-duration {
+    color: #3b6346;
+}
+
+.event-action {
+    color: #15803d;
+    font-weight: 600;
+}
+
+.events-empty {
+    color: #1f5a32;
+    border-top-color: #e4eee6;
+}
+
+/* Фильтры и таблица данных */
+
+.search-field {
+    background: #ffffff;
+    border-color: #c8dfcd;
+    color: #1d4d2b;
+}
+
+.search-field:focus-within {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px #dcfce7;
+}
+
+.search-field input {
+    color: #0f381e;
+}
+
+.search-field input::placeholder {
+    color: #557b60;
+}
+
+.search-field button {
+    color: #15803d;
+}
+
+.filter-tabs {
+    background: #e7f3ea;
+}
+
+.filter-tabs button {
+    color: #2c5939;
+    font-weight: 500;
+}
+
+.filter-tabs button.selected {
+    background: #ffffff;
+    color: #0e4c23;
+    font-weight: 650;
+    box-shadow: 0 2px 6px rgba(16, 68, 35, 0.12);
+}
+
+.data-filter,
+.results-count,
+.page-size {
+    color: #2f5a3b;
+    font-weight: 500;
+}
+
+.data-filter select,
+.page-size select {
+    background: #ffffff;
+    border-color: #c7decb;
+    color: #124d26;
+    font-weight: 500;
+}
+
+.data-panel th {
+    background: #f2faf4;
+    border-block-color: #d3e7d8;
+    color: #1a562d;
+    font-weight: 650;
+}
+
+.data-panel td {
+    color: #174224;
+    border-bottom-color: #e5efe7;
+}
+
+.data-panel tr:hover td {
+    background: #f5fbf7;
+}
+
+.pagination {
+    color: #315b3d;
+    border-top: 1px solid #e3ede5;
+}
+
+.table-empty b {
+    color: #15622e;
+}
+
+.table-empty>span {
+    color: #3e6649;
+}
+
+/* Модальные окна и уведомления */
+
+.modal {
+    border-color: #bbf7d0;
+    box-shadow: 0 25px 80px rgba(12, 54, 28, 0.28);
+}
+
+.modal-symbol {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.modal h2 {
+    color: #0c3319;
+}
+
+.modal>p {
+    color: #345b3f;
+}
+
+.dropzone {
+    border-color: #86efac;
+    background: #f0fdf4;
+    color: #166534;
+}
+
+.dropzone:hover,
+.dropzone.dragging {
+    background: #dcfce7;
+    border-color: #16a34a;
+}
+
+.dropzone b {
+    color: #14532d;
+}
+
+.dropzone span {
+    color: #1e5a32;
+}
+
+.dropzone small {
+    color: #4b7355;
+}
+
+.demo-options button {
+    background: #ffffff;
+    border-color: #c7dfcc;
+}
+
+.demo-options button:hover {
+    background: #f0fdf4;
+    border-color: #86efac;
+}
+
+.demo-options b {
+    color: #114221;
+}
+
+.demo-options small {
+    color: #42694b;
+}
+
+.demo-options button>svg:last-child {
+    color: #16a34a;
+}
+
+.upload-error {
+    background: #fff7ed;
+    color: #9a3412;
+    border-color: #ffedd5;
+}
+
+.help-steps>div>span {
+    background: #dcfce7;
+    color: #15803d;
+    font-weight: 700;
+}
+
+.help-steps h3 {
+    color: #104220;
+}
+
+.help-steps p {
+    color: #386043;
+}
+
+.modal pre {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #14532d;
+}
+
+.settings-list>div {
+    border-bottom-color: #e5efe7;
+    color: #376142;
+}
+
+.settings-list b {
+    color: #114b24;
+}
+
+.toast {
+    background: #0f4523;
+    color: #f0fdf4;
+    border-color: #22c55e;
+    box-shadow: 0 10px 30px rgba(15, 69, 35, 0.35);
+}
+
+.toast>span {
+    background: #16a34a;
+}
+
+.chart-tooltip {
+    background: #ffffff;
+    border-color: #86efac;
+    box-shadow: 0 8px 25px rgba(16, 73, 36, 0.16);
+    color: #1f4f2c;
+}
+
+.chart-tooltip b {
+    color: #0c3319;
+}

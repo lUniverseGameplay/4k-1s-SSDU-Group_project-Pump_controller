@@ -333,7 +333,7 @@ export default function App() {
     })
     const [backendResult, setBackendResult] = useState<BackendAnalysis | null>(null)
     const [isLoading, setIsLoading] = useState(false)
-    const [fileName, setFileName] = useState("Загрузка демонстрационной записи…")
+    const [fileName, setFileName] = useState("Файл не загружен")
     const [view, setView] = useState("overview")
     const [modal, setModal] = useState<"upload" | "help" | "settings" | null>(
         null,
