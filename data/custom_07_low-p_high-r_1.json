@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "07_low_pressure_high_rpm_detected",
+  "synthetic": true,
+  "samples": [
+    {"t_s": 0, "pressure_mpa": 3, "rpm": 100, "valid": true},
+    {"t_s": 1, "pressure_mpa": 3, "rpm": 100, "valid": true},
+    {"t_s": 2, "pressure_mpa": 3, "rpm": 100, "valid": true},
+    {"t_s": 3, "pressure_mpa": 7, "rpm": 100, "valid": true},
+    {"t_s": 4, "pressure_mpa": 7, "rpm": 100, "valid": true}
+  ]
+}

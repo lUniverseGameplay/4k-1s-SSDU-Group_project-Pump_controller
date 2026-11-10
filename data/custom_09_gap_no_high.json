@@ -1,0 +1,751 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "09_no_high_after_gaps",
+  "synthetic": true,
+  "samples": [
+    {
+      "t_s": 0,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 1,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 2,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 3,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 4,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 5,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 6,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 7,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 8,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 9,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 10,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 11,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 12,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 13,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 14,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 15,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 16,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 17,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 18,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 19,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 20,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 21,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 22,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 23,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 24,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 25,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 26,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 27,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 28,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 29,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 39,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 40,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 41,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 42,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 43,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 44,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 45,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 46,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 47,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 48,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 49,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 50,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 51,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 52,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 53,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 54,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 55,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 56,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 57,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 58,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 59,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 60,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 61,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 62,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 63,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 64,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 65,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 66,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 67,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 68,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 78,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 79,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 80,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 81,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 82,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 83,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 84,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 85,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 86,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 87,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 88,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 89,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 90,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 91,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 92,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 93,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 94,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 95,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 96,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 97,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 98,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 99,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 100,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 101,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 102,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 103,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 104,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 105,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 106,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 107,
+      "pressure_mpa": 7.0,
+      "rpm": 100.0,
+      "valid": true
+    },
+    {
+      "t_s": 117,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 118,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 119,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 120,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 121,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 122,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 123,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 124,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 125,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 126,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 127,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 128,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 129,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 130,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 131,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 132,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 133,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 134,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 135,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 136,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 137,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 138,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 139,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 140,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 141,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 142,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 143,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 144,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 145,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 146,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 147,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 148,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 149,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    },
+    {
+      "t_s": 150,
+      "pressure_mpa": 3.0,
+      "rpm": 80.0,
+      "valid": true
+    }
+  ]
+}

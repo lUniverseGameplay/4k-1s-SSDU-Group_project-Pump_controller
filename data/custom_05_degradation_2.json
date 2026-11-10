@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "05_degradation_5percent",
+  "synthetic": true,
+  "samples": [
+    {"t_s": 0, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 1, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 2, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 3, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 4, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 5, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 6, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 7, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 8, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 9, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 10, "pressure_mpa": 9.5, "rpm": 100, "valid": true},
+    {"t_s": 11, "pressure_mpa": 9.5, "rpm": 100, "valid": true},
+    {"t_s": 12, "pressure_mpa": 9.5, "rpm": 100, "valid": true},
+    {"t_s": 13, "pressure_mpa": 9.5, "rpm": 100, "valid": true},
+    {"t_s": 14, "pressure_mpa": 9.5, "rpm": 100, "valid": true},
+    {"t_s": 15, "pressure_mpa": 9.5, "rpm": 100, "valid": true},
+    {"t_s": 16, "pressure_mpa": 9.5, "rpm": 100, "valid": true},
+    {"t_s": 17, "pressure_mpa": 9.5, "rpm": 100, "valid": true},
+    {"t_s": 18, "pressure_mpa": 9.5, "rpm": 100, "valid": true},
+    {"t_s": 19, "pressure_mpa": 9.5, "rpm": 100, "valid": true}
+  ]
+}

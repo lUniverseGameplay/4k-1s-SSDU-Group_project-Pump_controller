@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "02_stops_60percent",
+  "synthetic": true,
+  "samples": [
+    {"t_s": 0, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 1, "pressure_mpa": 0, "rpm": 0, "valid": true},
+    {"t_s": 2, "pressure_mpa": 0, "rpm": 0, "valid": true},
+    {"t_s": 3, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 4, "pressure_mpa": 0, "rpm": 0, "valid": true},
+    {"t_s": 5, "pressure_mpa": 10, "rpm": 100, "valid": true},
+    {"t_s": 6, "pressure_mpa": 0, "rpm": 0, "valid": true},
+    {"t_s": 7, "pressure_mpa": 7, "rpm": 100, "valid": true},
+    {"t_s": 8, "pressure_mpa": 7, "rpm": 100, "valid": true},
+    {"t_s": 9, "pressure_mpa": 7, "rpm": 100, "valid": true},
+    {"t_s": 10, "pressure_mpa": 7, "rpm": 100, "valid": true}
+  ]
+}
