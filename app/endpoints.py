@@ -41,8 +41,6 @@ async def analyze_file(
         payload = await file.read()
         logger.info("Received pump recording (%d bytes)", len(payload))
 
-        # Анализ, отрисовка Matplotlib и запись файлов синхронные операции.
-        # Выполняем их в thread pool, чтобы не блокировать event loop FastAPI.
         result = await run_in_threadpool(analyze_json, payload)
         result = await run_in_threadpool(save_analysis_result, result)
 
@@ -53,7 +51,6 @@ async def analyze_file(
         )
         return result
     except AnalysisError as error:
-        # Ожидаемая ошибка входных данных: файл не анализируется и не сохраняется.
         logger.warning("Pump recording rejected: category=%s, message=%s", error.category, str(error))
         raise HTTPException(
             status_code=422,

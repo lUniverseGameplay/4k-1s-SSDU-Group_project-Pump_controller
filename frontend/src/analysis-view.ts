@@ -96,12 +96,10 @@ export function filterMeasurements(
             }
         })
         .filter((row) => {
-            // Фильтр по режиму
             if (mode !== "all" && row.mode !== mode) {
                 return false
             }
 
-            // Если поиск пустой, строка подходит
             if (!normalizedQuery) return true
 
             const sample = row.sample

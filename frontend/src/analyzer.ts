@@ -124,8 +124,6 @@ export type BackendAnalysis = {
     }
 }
 
-
-// Тип гипотезы для отображения во Frontend
 export type ViewHypothesis = {
     id: number
     title: string

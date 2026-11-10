@@ -2180,7 +2180,6 @@ h2 {
     }
 }
 
-/* Analysis tools share the dashboard's quiet green palette, with stronger text contrast. */
 .analysis-summary {
     display: flex;
     align-items: center;
@@ -2945,8 +2944,6 @@ h2 {
     }
 }
 
-/* Боковая панель */
-
 .brand small {
     font-size: 8px;
     color: #607066;
@@ -3015,8 +3012,6 @@ h2 {
     color: #627056;
 }
 
-/* Верхняя панель и заголовки */
-
 .breadcrumbs {
     font-size: 12px;
     color: #6f7c70;
@@ -3073,7 +3068,6 @@ h2,
     line-height: 1.65;
 }
 
-/* Информация о наборе данных */
 
 .dataset-title b {
     font-size: 14px;
@@ -3129,8 +3123,6 @@ h2,
     color: #78885f;
 }
 
-/* Карточки показателей */
-
 .metric-top {
     font-size: 12px;
     color: #566b4c;
@@ -3155,8 +3147,6 @@ h2,
 .green .metric-caption {
     color: #526e43;
 }
-
-/* Графики */
 
 .subtle-tag {
     font-size: 10px;
@@ -3232,8 +3222,6 @@ h2,
     width: 40px;
 }
 
-/* Гипотезы */
-
 .count-badge {
     font-size: 10px;
     color: #80672f;
@@ -3283,8 +3271,6 @@ h2,
     color: #6b7e5b;
 }
 
-/* Сводка анализа */
-
 .summary-eyebrow {
     font-size: 10px;
     color: #587449;
@@ -3315,8 +3301,6 @@ h2,
     font-size: 10px;
     color: #667d56;
 }
-
-/* Диапазон и события */
 
 .range-caption {
     font-size: 12px;
@@ -3378,8 +3362,6 @@ h2,
     font-size: 13px;
     color: #567344;
 }
-
-/* Таблица и поиск */
 
 .filter-tabs button {
     font-size: 11px;
@@ -3445,8 +3427,6 @@ h2,
 .table-empty>span {
     font-size: 12px;
 }
-
-/* Модальные окна */
 
 .modal h2 {
     font-size: 26px;
@@ -3549,8 +3529,6 @@ h2,
     font-size: 13px;
     color: #667f51;
 }
-
-/* Адаптация: текст остаётся читаемым на небольших экранах */
 
 @media (max-width: 1200px) {
     h1 {
@@ -3921,16 +3899,12 @@ h2,
     }
 }
 
-/* Ещё немного крупнее, насыщеннее и контрастнее */
-
 @layer base {
     body {
         font-size: 15px;
         color: #1e3528;
     }
 }
-
-/* Навигация */
 
 .nav-item {
     font-size: 15px;
@@ -3978,8 +3952,6 @@ h2,
     color: #446a37;
 }
 
-/* Заголовки */
-
 h1 {
     font-size: 34px;
     color: #1e3e29;
@@ -4019,8 +3991,6 @@ h2,
     font-size: 12px;
     color: #43683e;
 }
-
-/* Кнопки и подписи */
 
 .button {
     font-size: 13px;
@@ -4073,8 +4043,6 @@ h2,
     color: #4a693a;
 }
 
-/* Набор данных */
-
 .dataset-title b {
     font-size: 15px;
     color: #294c31;
@@ -4098,8 +4066,6 @@ h2,
 .notice.warning {
     color: #8c561e;
 }
-
-/* Показатели */
 
 .metric-top {
     font-size: 13px;
@@ -4133,8 +4099,6 @@ h2,
 .green .metric-track>div {
     background: #548a43;
 }
-
-/* Графики */
 
 .chart-toggles button {
     font-size: 13px;
@@ -4185,8 +4149,6 @@ h2,
     color: #2d5726;
 }
 
-/* Гипотезы и пояснения */
-
 .table-head {
     font-size: 11px;
     color: #506d3d;
@@ -4217,8 +4179,6 @@ h2,
     font-size: 11px;
     color: #587348;
 }
-
-/* Сводка анализа */
 
 .summary-eyebrow {
     font-size: 11px;
@@ -4254,8 +4214,6 @@ h2,
     background: #548c43;
 }
 
-/* Диапазон и события */
-
 .range-caption,
 .event-copy b {
     font-size: 13px;
@@ -4290,8 +4248,6 @@ h2,
     font-size: 14px;
     color: #426c33;
 }
-
-/* Таблица */
 
 .search-field input {
     font-size: 14px;
@@ -4347,7 +4303,6 @@ h2,
     color: #567343;
 }
 
-/* Модальные окна */
 
 .modal h2 {
     font-size: 28px;
@@ -4405,8 +4360,6 @@ h2,
 .chart-tooltip b {
     color: #285720;
 }
-
-/* Небольшие экраны */
 
 @media (max-width: 1200px) {
     h1 {
@@ -4666,8 +4619,6 @@ h2,
     }
 }
 
-/* Максимальная яркость, сочные акценты и высокий контраст */
-
 @layer base {
     body {
         color: #12281a;
@@ -4687,8 +4638,6 @@ h2,
         outline-offset: 3px;
     }
 }
-
-/* Фирменный стиль и левая панель */
 
 .brand {
     color: #0e3820;
@@ -4788,8 +4737,6 @@ h2,
     border-color: #86efac;
 }
 
-/* Верхняя панель */
-
 .breadcrumbs {
     color: #4b6651;
 }
@@ -4824,8 +4771,6 @@ h2,
     font-weight: 600;
 }
 
-/* Заголовки страницы */
-
 .eyebrow {
     color: #15803d;
     font-weight: 700;
@@ -4838,8 +4783,6 @@ h1 {
 .page-heading p {
     color: #385941;
 }
-
-/* Кнопки */
 
 .button.primary {
     background: #15803d;
@@ -4872,8 +4815,6 @@ h1 {
     color: #0f5128;
 }
 
-/* Набор данных */
-
 .dataset-bar {
     border-color: #cfe2d3;
     box-shadow: 0 2px 6px rgba(18, 56, 30, 0.04);
@@ -4902,8 +4843,6 @@ h1 {
     border-left-color: #d1e3d4;
     font-weight: 500;
 }
-
-/* Бейджи */
 
 .badge.success {
     color: #14532d;
@@ -4949,8 +4888,6 @@ h1 {
     background: #f0fdf4;
 }
 
-/* Предупреждения и подсказки */
-
 .notice {
     color: #3b5e44;
 }
@@ -4963,8 +4900,6 @@ h1 {
     color: #b45309;
     font-weight: 550;
 }
-
-/* Карточки показателей */
 
 .metric-card {
     border-color: #cfe0d2;
@@ -5023,8 +4958,6 @@ h1 {
     background: #f59e0b;
 }
 
-/* Заголовки панелей */
-
 .panel {
     border-color: #cfe0d2;
     box-shadow: 0 2px 7px rgba(18, 54, 30, 0.04);
@@ -5038,8 +4971,6 @@ h2,
 .panel-heading p {
     color: #3d6046;
 }
-
-/* Графики и легенды */
 
 .chart-toggles button {
     color: #1f5733;
@@ -5117,8 +5048,6 @@ h2,
     font-weight: 550;
 }
 
-/* Таблица гипотез */
-
 .table-head {
     background: #f4faf5;
     border-block-color: #d7e7dc;
@@ -5176,8 +5105,6 @@ h2,
     background: #16a34a;
     box-shadow: 0 0 0 2px #bbf7d0;
 }
-
-/* Сводка анализа */
 
 .analysis-summary {
     border-color: #86efac;
@@ -5246,8 +5173,6 @@ h2,
     background: #dcfce7;
     color: #0f5128;
 }
-
-/* Ползунки диапазона и события */
 
 .range-controls {
     background: #f7fbf8;
@@ -5326,8 +5251,6 @@ h2,
     color: #1f5a32;
     border-top-color: #e4eee6;
 }
-
-/* Фильтры и таблица данных */
 
 .search-field {
     background: #ffffff;
@@ -5411,8 +5334,6 @@ h2,
 .table-empty>span {
     color: #3e6649;
 }
-
-/* Модальные окна и уведомления */
 
 .modal {
     border-color: #bbf7d0;

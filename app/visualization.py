@@ -9,7 +9,6 @@ from typing import Any
 
 import matplotlib
 
-# The API usually runs without a graphical desktop (for example, on a server).
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
@@ -84,8 +83,6 @@ def _create_pressure_rpm_graph(
         pressure_values: list[float] = []
         rpm_values: list[float] = []
         for index, sample in enumerate(samples):
-            # The final sample only closes the previous interval. It does not
-            # define a new interval, so its value is not extended on the plot.
             if index >= len(intervals):
                 pressure_values.append(math.nan)
                 rpm_values.append(math.nan)
@@ -93,7 +90,6 @@ def _create_pressure_rpm_graph(
 
             state = intervals[index].get("state")
             if state in {"gap", "invalid"}:
-                # NaN breaks the step line over the whole problematic interval.
                 pressure_values.append(math.nan)
                 rpm_values.append(math.nan)
                 continue
@@ -113,8 +109,6 @@ def _create_pressure_rpm_graph(
                 times, rpm_values, where="post", linewidth=1.6, label="Обороты"
             )[0]
 
-        # A one-point recording has no intervals, but the point itself is still
-        # useful to show. Empty recordings are handled with an explanatory note.
         if len(samples) == 1 and not intervals:
             sample = samples[0]
             t_s = _number_or_none(sample.get("t_s"))
@@ -199,9 +193,6 @@ def _create_pressure_rpm_graph(
 
     return destination
 
-
-# Matplotlib uses shared global state; serialize rendering when API requests
-# are handled concurrently by FastAPI's worker threads.
 _PLOT_LOCK = Lock()
 
 
